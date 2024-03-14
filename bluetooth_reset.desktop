@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Bluetooth Reset
+Icon=utilities-terminal
+Exec=/home/tdcs/btcc.sh
+Categories=Application;
+Actions=remove-stim
+
+[Desktop Action remove-stim]
+Name=Remove Stimulation Device
+Exec=/home/tdcs/btrem.sh
