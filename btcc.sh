@@ -2,7 +2,6 @@
 
 BTCACHE_LOCATION=/var/lib/bluetooth/*
 LOG=/home/tdcs/btlog.txt
-PW=lnpicog1
 RPW=fasd
 date=$(date +'%m/%d/%y %H:%M:%S');
 
