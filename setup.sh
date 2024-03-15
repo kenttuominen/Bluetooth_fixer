@@ -1,20 +1,28 @@
 #!/bin/bash
 PW=lnpicog1
 RPW=tdcscog1
+
 ##Make password consistent
-echo $PW | sudo sh -c 'echo root:tdcscog1 | chpasswd'
+echo $PW | sudo sh -c 'root:tdcscog1 | chpasswd' 2>/dev/null
 ##Make scripts executable
-echo chmod +x btcc.sh
-echo chmod +x btrem.sh
+echo $RPW | su -c 'chmod +x /home/tdcs/Bluetooth_fixer/btcc.sh' root
+echo $RPW | su -c 'chmod +x /home/tdcs/Bluetooth_fixer/btrem.sh' root
 ##Add script to crontab to activate upon reboot
 echo $RPW | su -c "echo '@reboot root sh /home/tdcs/Bluetooth_fixer/btcc.sh' >> /etc/crontab" root
 ##Move desktop shortcut to applications folder
-echo cp /home/tdcs/Bluetooth_fixer/bluetooth_reset.desktop /usr/share/applications/bluetooth_reset.desktop
-echo $PW | sudo chmod a+x /usr/applications/bluetooth_reset.desktop
-echo $PW | sudo dbus-launch gio set /usr/share/applications/bluetooth_reset.desktop metadata::trusted true
-##Move the shortcut to the desktop
-##cp bluetooth_reset.desktop /home/tdcs/Desktop/bluetooth_reset.desktop
-##Make the shortcut launchable
-##gio set /home/tdcs/Desktop/bluetooth_reset.desktop metadata::trusted true
-##chmod a+x /home/tdcs/Desktop/bluetooth_reset.desktop
-gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'bluetooth_reset.desktop']"
+echo $RPW | su -c 'cp /home/tdcs/Bluetooth_fixer/bluetooth_reset.desktop /usr/share/applications/bluetooth_reset.desktop' root
+echo $RPW | su -c 'chmod a+x /usr/share/applications/bluetooth_reset.desktop' root
+dbus-launch gio set /usr/share/applications/bluetooth_reset.desktop metadata::trusted true
+
+##Could maybe get this working for other studies who have different needs for home screens
+##FAVORITES=$(gsettings get org.gnome.shell favorite-apps | sed 's/.$//')
+##FIX='"'"${FAVORITES}, 'bluetooth_reset.desktop']"'"'
+##gsettings set org.gnome.shell favorite-apps $FIX
+
+##Add the reset button to the favorites bar.
+gsettings set org.gnome.shell favorite-apps "['taskflow_taskflow.desktop', 'zoom-client_zoom-client.desktop', 'firefox.desktop', 'bluetooth_reset.desktop']"
+touch /home/tdcs/Bluetooth_fixer/btlog.txt
+touch /home/tdcs/Bluetooth_fixer/stim_addr.txt
+
+##Transfer all permissions to tdcs user for the scripts
+echo $RPW | su -c 'chown -R tdcs /home/tdcs/Bluetooth_fixer' root
