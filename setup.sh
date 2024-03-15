@@ -4,11 +4,12 @@ RPW=tdcscog1
 ##Make password consistent
 echo $PW | sudo sh -c 'echo root:tdcscog1 | chpasswd'
 ##Make scripts executable
-echo $PW | sudo chmod +x btcc.sh | echo $PW | sudo chmod +x btrem.sh
+echo chmod +x btcc.sh
+echo chmod +x btrem.sh
 ##Add script to crontab to activate upon reboot
 echo $RPW | su -c "echo '@reboot root sh /home/tdcs/Bluetooth_fixer/btcc.sh' >> /etc/crontab" root
 ##Move desktop shortcut to applications folder
-cp /home/tdcs/Bluetooth_fixer/bluetooth_reset.desktop /usr/share/applications/bluetooth_reset.desktop
+echo cp /home/tdcs/Bluetooth_fixer/bluetooth_reset.desktop /usr/share/applications/bluetooth_reset.desktop
 echo $PW | sudo chmod a+x /usr/applications/bluetooth_reset.desktop
 echo $PW | sudo dbus-launch gio set /usr/share/applications/bluetooth_reset.desktop metadata::trusted true
 ##Move the shortcut to the desktop
