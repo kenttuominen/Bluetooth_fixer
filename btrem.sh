@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 BTCACHE_LOCATION=/var/lib/bluetooth/*
 LOG=/home/tdcs/Bluetooth_fixer/btlog.txt
 RPW=tdcscog1
