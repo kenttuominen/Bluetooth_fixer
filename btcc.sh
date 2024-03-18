@@ -22,5 +22,5 @@ else
 	echo "Bluetooth and RAM cache last cleared on $date" > $LOG
 	zenity \
 	--notification \
-	--text "Caches cleared!" \
+	--text "Caches cleared!"
 fi
