@@ -12,3 +12,10 @@ Still a work in progress.
 
 4. Enter the password for the computer if prompted and wait ~30 seconds
 5. You should see the bluetooth reset icon appear in the favorites bar on the left. 
+
+## Usage
+- Clicking the Bluetooth refresh button will clear the page-cache, dentries, inodes, and swap-memory
+- You may right click press "Remove Stimulation Device"
+
+## Notes
+These connectivity issues appear to be specific to v4 devices and the 20.04 Ubuntu OS drivers; This is likely unnecessary for v5 devices, but does provide a one click solution to clear all cache in instances where light trouble-shooting is needed.
