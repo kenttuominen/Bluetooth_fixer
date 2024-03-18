@@ -13,7 +13,14 @@ echo $RPW | su -c "echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a
 ##Prints whether or not the script was ran successfully and at what time.
 if [ $? -ne 0 ]; then
 	echo "Error occurred on $date" >> $LOG
+	zenity \
+	--error \
+	--text "<b>An Error has occurred</b>.\nCache has not been cleared. Please check the logs." \
+	--width 300 \
 else
 ##If succesful, log is overwritten with the date and time of the last clearing
-	echo "Bluetooth and RAM cache last cleared on $date" > $LOG 
+	echo "Bluetooth and RAM cache last cleared on $date" > $LOG
+	zenity \
+	--notification \
+	--text "Caches cleared!" \
 fi

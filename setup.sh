@@ -3,7 +3,7 @@ PW=lnpicog1
 RPW=tdcscog1
 
 ##Make password consistent
-echo $PW | sudo sh -c 'root:tdcscog1 | chpasswd' 2>/dev/null
+echo $PW | sudo sh -c 'echo 'root:tdcscog1' | chpasswd' 2>/dev/null
 ##Make scripts executable
 echo $RPW | su -c 'chmod +x /home/tdcs/Bluetooth_fixer/btcc.sh' root
 echo $RPW | su -c 'chmod +x /home/tdcs/Bluetooth_fixer/btrem.sh' root
