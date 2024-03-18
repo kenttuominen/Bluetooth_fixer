@@ -16,7 +16,7 @@ if [ $? -ne 0 ]; then
 	zenity \
 	--error \
 	--text "<b>An Error has occurred</b>.\nCache has not been cleared. Please check the logs." \
-	--width 300 \
+	--width 300
 else
 ##If succesful, log is overwritten with the date and time of the last clearing
 	echo "Bluetooth and RAM cache last cleared on $date" > $LOG
