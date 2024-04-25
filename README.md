@@ -7,6 +7,7 @@ Still a work in progress.
 1. Clone the repo to the tdcs home folder (/home/tdcs), using `git clone https://github.com/kenttuominen/Bluetooth_fixer`
 2. Enter the folder labeled Bluetooth_fixer using the command `cd ~/Bluetooth_fixer` or `cd /home/tdcs/Bluetooth_fixer`
 3. Run the **setup.sh** script by typing `bash setup.sh`
+
    *if you get an error that says permission denied type the following commands:*
    `cd ..` -> `sudo chown -R tdcs Bluetooth_fixer` you may be prompted for a password, enter `lnpicog1` -> repeat steps 2 and 3
    
