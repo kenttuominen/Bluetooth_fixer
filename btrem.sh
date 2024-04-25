@@ -6,6 +6,11 @@ RPW=tdcscog1
 date=$(date +'%m/%d/%y %H:%M:%S');
 ##Find bluetooth devices with HC-06 in their info file
 DEVTARG=$(echo $RPW | su -c "ls -l | grep -r 'HC-06' $BTCACHE_LOCATION" root)
+if [ $? -ne 0 ]; then
+		DEVTARG=$(echo $RPW | su -c "ls -l | grep -r 'BLE_tDCS' $BTCACHE_LOCATION" root)
+	exit
+fi
+
 ##Pull MAC addr. from the path string
 DEVICE=$(expr substr $DEVTARG 38 17)
 if [ $? -ne 0 ]; then
