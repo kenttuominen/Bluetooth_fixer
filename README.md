@@ -14,7 +14,12 @@ Still a work in progress.
 *Make sure you do not run the command as root user; if you do not know what this is don't worry*
 
 4. Enter the password for the computer if prompted and wait ~30 seconds
-5. You should see the bluetooth reset icon appear in the favorites bar on the left. 
+5. You should see the bluetooth reset icon appear in the favorites bar on the left.
+
+## Updating (if Bluetooth Reset icon is already present)
+1. Open Terminal (Press Windows Key -> Search for 'Terminal'
+2. Run the following command: `sudo rm -r Bluetooth_fixer && git clone https://github.com/kenttuominen/Bluetooth_fixer && cd Bluetooth_fixer && bash setup.sh`
+3. Enter the computer password labelled in the bottom left bezel of the screen 
 
 ## Usage
 - Clicking the Bluetooth refresh button will clear the page-cache, dentries, inodes, and swap-memory
