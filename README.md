@@ -28,4 +28,4 @@ Still a work in progress.
 - You may right click press "Remove Stimulation Device"
 
 ## Notes
-These connectivity issues appear to be specific to v4 devices and the 20.04 Ubuntu OS drivers; This is likely unnecessary for v5 devices, but does provide a one click solution to clear all cache in instances where light trouble-shooting is needed.
+The design of this script essentially reboots the Bluetooth driver, removes any cached devices, and also clears all caches/swap-memory. If you are having connectivity issues (device not connecting when selected by taskflow, blue light not turning on, etc.), press the reset button on the taskbar once and reopen taskflow -> attempt to connect and wait 15s -> if connection fails retry by reopening taskflow, connection is usually established by the second try.
