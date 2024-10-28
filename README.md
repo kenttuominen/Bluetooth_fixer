@@ -21,7 +21,7 @@ Still a work in progress.
 2. Run the following command: `sudo rm -r Bluetooth_fixer && git clone https://github.com/kenttuominen/Bluetooth_fixer && cd Bluetooth_fixer && bash setup.sh`
 3. Enter the computer password labelled in the bottom left bezel of the screen
 
-*Double check update is applied by opening settings to the Bluetooth page, when the reset button is pressed you should see all devices disappear and bluetooth will turn on and off again*
+*Double check update is applied by opening settings to the Bluetooth page, when the reset button is pressed you should see all devices disappear and bluetooth will turn off and on again*
 
 ## Usage
 - Clicking the Bluetooth refresh button will clear the page-cache, dentries, inodes, and swap-memory
